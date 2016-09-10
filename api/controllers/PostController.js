@@ -13,13 +13,14 @@ module.exports = {
                         {brand: post.brand}).
                         then(
             function(record){
-                record.posts.add(post.id)
+                record.posts.add(post)
                 record.save()
-                post.tag = record.id
                 Post.create(post, function(err, obj){
                     if (err){
                         return res.serverError(err)
                     } else {
+                        obj.tags.add(record.id)
+                        obj.save()
                         res.status(201)
                         res.json(obj)
                     }
