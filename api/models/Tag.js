@@ -4,7 +4,7 @@ module.exports = {
     attributes: {
         brand: {
             type: 'string',
-            enum: ['Gilette', 'head & shoulders', 'Lenor', 'Pampers'],
+            enum: ['gilette', 'head_and_shoulders', 'lenor', 'pampers'],
             required: true,
         },
         post: {
