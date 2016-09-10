@@ -11,9 +11,11 @@ module.exports = {
         title: {
             type: 'string'
         },
+        /*
         picture: {
             model: 'picture'
         },
+        */
         author: {
             model: 'user',
             unique: true
