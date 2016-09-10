@@ -53,7 +53,7 @@ module.exports.routes = {
       view: 'post/create_post'
   },
 
-  'get /post/:id/upvote': 'PostController.upvote'
+  'get /post/:id/upvote': 'PostController.upvote',
 
   /***************************************************************************
   *                                                                          *
@@ -66,6 +66,6 @@ module.exports.routes = {
   ***************************************************************************/
   '/upload': {
       view: 'upload'
-  }
+  },
 
 };
