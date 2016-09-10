@@ -9,26 +9,17 @@ module.exports = {
 
     attributes: {
         title: {
-            type: 'string',
-            required: true
+            type: 'string'
         },
-        /*
         picture: {
             model: 'picture'
         },
-        */
         author: {
             model: 'user',
-            unique: true,
-            required: true
+            unique: true
         },
         content: {
             type: 'string'
-            required: true
-        },
-        toJson: function(){
-            var obj = this.toObject();
-            return obj;
         },
     }
 
