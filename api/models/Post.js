@@ -25,10 +25,6 @@ module.exports = {
             type: 'string',
             required: false,
         },
-        tag: {
-            collection: 'tag',
-            via: 'post',
-        },
     }
 
 };

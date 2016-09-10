@@ -3,14 +3,12 @@
 module.exports = {
     attributes: {
         brand: {
-            type: 'string'
-            enum: ['Gilette', 'head & shoulders', 'Lenor', 'Pampers']
-            required: true
+            type: 'string',
+            enum: ['Gilette', 'head & shoulders', 'Lenor', 'Pampers'],
+            required: true,
         },
-
         post: {
             model: 'post',
-            required: true
         }
     }
 }
