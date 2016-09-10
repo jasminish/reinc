@@ -7,8 +7,9 @@ module.exports = {
             enum: ['gilette', 'head_and_shoulders', 'lenor', 'pampers'],
             required: true,
         },
-        post: {
-            model: 'post',
+        posts: {
+            collection: 'post',
+            via: 'tags',
         }
     }
 }
