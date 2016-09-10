@@ -19,6 +19,7 @@ module.exports = {
                     if (err){
                         return res.serverError(err)
                     } else {
+                        obj.upvote = 0
                         obj.tags.add(record.id)
                         obj.save()
                         res.status(201)
@@ -28,18 +29,19 @@ module.exports = {
             }
         )
     },
-
+	
     upvote: function(req, res){
-        Post.findOne(id: req.param('id')).exec(
+        var id = req.param('id')
+        Post.findOne({id: id}).exec(
             function(err, record){
                 if (err) return res.serverError(err)
                 if (!record) return res.notFound('Invalid id entered')
                 record.upvote += 1
                 record.save()
+                res.status(201)
+                res.json(record)
             }
         )
-
-    }
-	
+    },
 };
 
