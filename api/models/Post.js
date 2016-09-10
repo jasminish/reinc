@@ -25,7 +25,14 @@ module.exports = {
             type: 'string',
             required: false,
         },
+        tags: {
+            collection: 'tag',
+            via: 'posts',
+            dominant: true,
+        },
+        upvote: {
+            type: 'integer',
+        }
     }
-
 };
 
