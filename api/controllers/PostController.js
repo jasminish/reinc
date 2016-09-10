@@ -28,6 +28,18 @@ module.exports = {
             }
         )
     },
+
+    upvote: function(req, res){
+        Post.findOne(id: req.param('id')).exec(
+            function(err, record){
+                if (err) return res.serverError(err)
+                if (!record) return res.notFound('Invalid id entered')
+                record.upvote += 1
+                record.save()
+            }
+        )
+
+    }
 	
 };
 
