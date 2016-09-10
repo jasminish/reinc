@@ -64,5 +64,8 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  '/upload': {
+      view: 'upload'
+  }
 
 };
