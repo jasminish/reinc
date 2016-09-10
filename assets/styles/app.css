@@ -1,12 +1,28 @@
 .navbar {
     background-color: #1ebea5;
+    height: 60px;
 }
 
 .navbar-brand {
-    padding: 5px 15px 5px 120px;
+    padding: 10px 15px 5px 120px;
 }
 
 .container {
   padding-top: 40px;
   margin: 0 auto;
+}
+
+.btn-default {
+    background-color: #1ebea5;
+    color: #fff;
+    -webkit-transition: 0.5s; 
+}
+
+a.small-link {
+    color: #777;
+    -webkit-transition: 0.5s;
+}
+a.small-link:hover {
+    color: #222;
+    text-decoration: none;
 }

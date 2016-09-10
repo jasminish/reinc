@@ -1,0 +1,24 @@
+body {
+    background-color: white;
+    background-image: url('/hacks/oralb3.jpg');
+    background-size: cover;
+    padding-top: 50px;
+}
+
+#login-form{
+    background-color: #f5f5f5;
+    padding: 20px 20px 20px 20px;
+    -webkit-border-radius: 1em;
+}
+
+.form-control {
+    height: auto;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.signup-link {
+    text-align: right;
+    margin-top: 8px; 
+}
