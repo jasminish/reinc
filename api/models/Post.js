@@ -30,7 +30,9 @@ module.exports = {
             via: 'posts',
             dominant: true,
         },
+        upvote: {
+            type: 'integer',
+        }
     }
-
 };
 
