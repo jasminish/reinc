@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #1ebea5;
+}
+
+.navbar-brand {
+    padding: 5px 15px 5px 120px;
+}
+
+.container {
+  padding-top: 40px;
+  margin: 0 auto;
+}
