@@ -47,7 +47,11 @@ module.exports.routes = {
 
   'get /signup': {
       view: 'signup'
-  }
+  },
+
+  'get /post/create_post': {
+      view: 'post/create_post'
+  },
 
   /***************************************************************************
   *                                                                          *

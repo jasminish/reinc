@@ -9,7 +9,8 @@ module.exports = {
 
     attributes: {
         title: {
-            type: 'string'
+            type: 'string',
+            required: true,
         },
         /*
         picture: {
@@ -18,10 +19,11 @@ module.exports = {
         */
         author: {
             model: 'user',
-            unique: true
+            required: true,
         },
         content: {
-            type: 'string'
+            type: 'string',
+            required: false,
         },
     }
 
