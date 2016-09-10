@@ -53,6 +53,8 @@ module.exports.routes = {
       view: 'post/create_post'
   },
 
+  'put /post/:id/upvote': 'PostController.upvote'
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
