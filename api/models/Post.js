@@ -8,6 +8,19 @@
 module.exports = {
 
     attributes: {
+        title: {
+            type: 'string'
+        },
+        picture: {
+            model: 'picture'
+        },
+        author: {
+            model: 'user',
+            unique: true
+        },
+        content: {
+            type: 'string'
+        },
     }
 
 };
