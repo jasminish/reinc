@@ -4,14 +4,7 @@
   </head>
 
   <body>
-      <div class = "container", id="show">
+      <div class = "container", id="show"><button class="btn" id="button"></button>
       </div>
-
-      <script>
-      $("show").onLoad(function(){
-    $.get("/post", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
-});</script>
   </body>
 </html>
