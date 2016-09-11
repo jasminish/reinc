@@ -9,7 +9,7 @@ module.exports = {
     create: function(req, res){
         var post = req.params.all()
         post.author = req.user
-        Tag.findOrCreate({brand: post.brand}, 
+        Tag.findOrCreate({brand: post.brand},
                         {brand: post.brand}).
                         then(
             function(record){
@@ -29,7 +29,7 @@ module.exports = {
             }
         )
     },
-	
+
     upvote: function(req, res){
         var id = req.param('id')
         Post.findOne({id: id}).exec(
@@ -44,4 +44,3 @@ module.exports = {
         )
     },
 };
-
