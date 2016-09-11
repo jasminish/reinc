@@ -12,15 +12,14 @@ module.exports = {
 
         // upload picture
         req.file('picture').upload(function (err, files) {
-            if (err) return res.serverError(err);
+            if (err) return res.serverError(err)
 
-            if (files[0] !== undefined){
-                var file = {
-                    filename: files[0].filename
-                    fileDescriptor: files[0].fd
-                }
-                post.picture = file
+            if (files.length === 0) return res.badRequest('No picture uploaded')
+
+            var picture = {
+                picFd: files[0].fd
             }
+            post.picture = picture
 
             // find tag
             Tag.findOrCreate({brand: post.brand}, 
@@ -42,9 +41,8 @@ module.exports = {
                             res.json(obj)
                         }
                     })
-                }
-            )
-        });
+                })
+        })
     },
 	
     upvote: function(req, res){

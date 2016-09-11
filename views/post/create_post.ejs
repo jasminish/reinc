@@ -1,5 +1,7 @@
 <h1>Create post</h1>
-<form method="POST" action="/post" />
+<form method="POST"
+      enctype="multipart/form-data"
+      action="/post/create" />
     Title: <input type="text" name="title" /><br>
     Content: <input type="text" name="content" /><br>
     Brand:
@@ -9,6 +11,7 @@
         <option value="lenor">Lenor</option>
         <option value="pampers">Pampers</option>
         </select>
+    <br>
     Picture:
         <input type="file" name="picture" />
 
