@@ -6,9 +6,10 @@
  */
 
 module.exports = {
-    create: function(req, res){
+    create_post: function(req, res){
         var post = req.params.all()
         post.author = req.user
+        post.upvote = 0
         // upload picture
         req.file('picture').upload(function (err, files) {
             if (err) return res.serverError(err)
@@ -27,19 +28,8 @@ module.exports = {
                 function(tag){
                     tag.posts.add(post)
                     tag.save()
-
-                    // create post
-                    Post.create(post, function(err, obj){
-                        if (err){
-                            return res.serverError(err)
-                        } else {
-                            obj.upvote = 0
-                            obj.tags.add(tag.id)
-                            obj.save()
-                            res.status(201)
-                            res.json(obj)
-                        }
-                    })
+                    res.status(201)
+                    res.redirect('/')
                 })
         })
     },
