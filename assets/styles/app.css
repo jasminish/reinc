@@ -6,6 +6,20 @@
 .navbar-brand {
     padding: 10px 15px 5px 120px;
 }
+.navbar-nav {
+    padding: 0px 10px 5px 5px;
+}
+.navbar-nav a{
+    font-size: 25px;
+    color: white;
+    -webkit-transition: 0.5s;
+}
+.navbar-nav a:hover{
+    color: #1ebea5;
+    font-size: 20px;
+    margin-top: 3px;  
+    -webkit-border-radius:100%;
+}
 
 .container {
   padding-top: 40px;
@@ -15,7 +29,7 @@
 .btn-default {
     background-color: #1ebea5;
     color: #fff;
-    -webkit-transition: 0.5s; 
+    -webkit-transition: 0.5s;
 }
 
 a.small-link {
