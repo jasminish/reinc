@@ -1,0 +1,15 @@
+#post-form {
+    margin-top: 40px;
+}
+
+.form-group{
+    margin-top: 10px;
+}
+.form-control {
+    height: auto;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+.form-action {
+    margin-top: 15px;
+}

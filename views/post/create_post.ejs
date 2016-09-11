@@ -1,14 +1,38 @@
-<h1>Create post</h1>
-<form method="POST" action="/post">
-    Title: <input type="text" name="title"><br>
-    Content: <input type="text" name="content"><br>
-    Brand:
-    <select name="brand">
-    <option value="gilette">Gilette</option>
-    <option value="head_and_shoulders">Head and Shoulders</option>
-    <option value="lenor">Lenor</option>
-    <option value="pampers">Pampers</option>
-    </select>
+<head>
+    <% title = 'New Hack' %>
+    <link rel="stylesheet" href="/styles/create_post.css">
+    <link rel="stylesheet" href="/styles/dropzone.css">
+</head>
 
-    <input type="submit" value="submit">
-</form>
+<body>
+<div class = "container">
+    <div class="col-md-4 col-md-offset-2", id = "add-pic">
+
+    </div>
+    <div class="col-md-4", id = "post-form">
+        <center><h1>New Hack</h1></center>
+
+        <form method="POST" action="/post">
+            <div class="form-group">
+                <label for="title">Hack Name</label>
+                <input type="text" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+                <label for="content">Hack Description</label>
+                <textarea type="text" rows="3" class="form-control" name="content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="brand-list">Brand</label>
+                <select class="form-control" id="brand-list">
+                    <option value="gilette">Gilette</option>
+                    <option value="head_and_shoulders">Head and Shoulders</option>
+                    <option value="lenor">Lenor</option>
+                    <option value="pampers">Pampers</option>
+                </select>
+                <div class="form-action">
+                    <input type="submit" class="btn btn-default btn-block" value="submit" && value="upload">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
