@@ -12,11 +12,9 @@ module.exports = {
             type: 'string',
             required: true,
         },
-        /*
         picture: {
-            model: 'picture'
+            type: 'json'
         },
-        */
         author: {
             model: 'user',
             required: true,

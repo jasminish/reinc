@@ -9,25 +9,39 @@ module.exports = {
     create: function(req, res){
         var post = req.params.all()
         post.author = req.user
-        Tag.findOrCreate({brand: post.brand},
-                        {brand: post.brand}).
-                        then(
-            function(record){
-                record.posts.add(post)
-                record.save()
-                Post.create(post, function(err, obj){
-                    if (err){
-                        return res.serverError(err)
-                    } else {
-                        obj.upvote = 0
-                        obj.tags.add(record.id)
-                        obj.save()
-                        res.status(201)
-                        res.json(obj)
-                    }
-                })
+        // upload picture
+        req.file('picture').upload(function (err, files) {
+            if (err) return res.serverError(err)
+
+            if (files.length === 0) return res.badRequest('No picture uploaded')
+
+            var picture = {
+                picFd: files[0].fd
             }
-        )
+            post.picture = picture
+
+            // find tag
+            Tag.findOrCreate({brand: post.brand}, 
+                            {brand: post.brand}).
+                            then(
+                function(tag){
+                    tag.posts.add(post)
+                    tag.save()
+
+                    // create post
+                    Post.create(post, function(err, obj){
+                        if (err){
+                            return res.serverError(err)
+                        } else {
+                            obj.upvote = 0
+                            obj.tags.add(tag.id)
+                            obj.save()
+                            res.status(201)
+                            res.json(obj)
+                        }
+                    })
+                })
+        })
     },
 
     upvote: function(req, res){
