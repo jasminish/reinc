@@ -47,7 +47,12 @@
     $(document).ready(function() {
             $.get('post/', function(data){
                     data.forEach(function(datum){
-                            $('.grid').append("<div class='grid-item'>" + datum.title + "</div>")
+                            $('.grid').append(
+    "<div class='grid-item'>" + 
+        "<h1>" + datum.title + "</h1>" +
+        (datum.picture !== undefined ? "<img src='" + datum.picture.picFd + "'></img>" : "")  +
+        "<p>" + datum.content + "</p>" +
+    "</div>")
                             })
                     })
     });
