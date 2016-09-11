@@ -43,7 +43,7 @@ module.exports = {
                 record.upvote += 1
                 record.save()
                 res.status(201)
-                res.json(record)
+                res.redirect('/')
             }
         )
     },
